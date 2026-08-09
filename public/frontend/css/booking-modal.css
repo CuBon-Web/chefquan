@@ -1,0 +1,451 @@
+.cq-booking-modal .modal-dialog {
+  max-width: 860px;
+  margin: 1.25rem auto;
+}
+
+.cq-booking-modal__content {
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fffaf3;
+  box-shadow: 0 28px 60px rgba(60, 2, 2, 0.28);
+}
+
+.cq-booking-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 5;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(60, 2, 2, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 250, 243, 0.92);
+  color: #3c0202;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.cq-booking-modal__close:hover {
+  background: var(--main-color);
+  border-color: var(--main-color);
+  transform: rotate(90deg);
+}
+
+.cq-booking-modal__grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) 1.3fr;
+  min-height: 520px;
+}
+
+.cq-booking-modal__aside {
+  position: relative;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(230, 177, 95, 0.28), transparent 42%),
+    linear-gradient(160deg, #4a0a0a 0%, #3c0202 48%, #2a0101 100%);
+  color: #fffaf3;
+  padding: 36px 28px;
+}
+
+.cq-booking-modal__aside::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(230, 177, 95, 0.45);
+  pointer-events: none;
+}
+
+.cq-booking-modal__aside-inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cq-booking-modal__eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.cq-booking-modal__aside-title {
+  margin: 0 0 14px;
+  font-family: var(--font-family-Fraunces), Georgia, serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #fffaf3;
+}
+
+.cq-booking-modal__aside-text {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 250, 243, 0.78);
+}
+
+.cq-booking-modal__hotline {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border: 1px solid rgba(230, 177, 95, 0.45);
+  border-radius: 12px;
+  background: rgba(230, 177, 95, 0.12);
+  color: #fffaf3;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.cq-booking-modal__hotline span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.cq-booking-modal__hotline strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cq-booking-modal__hotline:hover {
+  color: #fffaf3;
+  background: rgba(230, 177, 95, 0.22);
+  border-color: var(--main-color);
+}
+
+.cq-booking-modal__address {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 250, 243, 0.65);
+}
+
+.cq-booking-modal__main {
+  padding: 36px 32px 30px;
+  background:
+    radial-gradient(circle at top right, rgba(230, 177, 95, 0.16), transparent 40%),
+    #fffaf3;
+}
+
+.cq-booking-modal__header {
+  margin-bottom: 18px;
+  padding-right: 28px;
+}
+
+.cq-booking-modal__title {
+  margin: 0 0 6px;
+  font-family: var(--font-family-Fraunces), Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #3c0202;
+}
+
+.cq-booking-modal__subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(60, 2, 2, 0.62);
+}
+
+.cq-booking-alert {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cq-booking-alert ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.cq-booking-alert--success {
+  background: #eef8f1;
+  color: #2f7d4a;
+  border: 1px solid rgba(47, 125, 74, 0.25);
+}
+
+.cq-booking-alert--error {
+  background: #fde8e8;
+  color: #8b1e1e;
+  border: 1px solid rgba(139, 30, 30, 0.25);
+}
+
+.cq-booking-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cq-booking-form__row--3 {
+  grid-template-columns: 1.1fr 1fr 1fr;
+}
+
+.cq-booking-field {
+  margin-bottom: 12px;
+}
+
+.cq-booking-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(60, 2, 2, 0.72);
+}
+
+.cq-booking-field input,
+.cq-booking-field select,
+.cq-booking-field textarea {
+  width: 100%;
+  border: 1px solid rgba(60, 2, 2, 0.14);
+  border-radius: 10px;
+  background: #fff;
+  color: #3c0202;
+  font-size: 14px;
+  padding: 11px 13px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.cq-booking-field select {
+  background-image: linear-gradient(45deg, transparent 50%, #3c0202 50%),
+    linear-gradient(135deg, #3c0202 50%, transparent 50%);
+  background-position: calc(100% - 16px) calc(50% - 2px), calc(100% - 11px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+
+.cq-booking-field input:focus,
+.cq-booking-field select:focus,
+.cq-booking-field textarea:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 3px rgba(230, 177, 95, 0.18);
+}
+
+.cq-booking-field textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+
+.cq-booking-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 12px;
+  color: #3c0202;
+  background: linear-gradient(135deg, #f0c987 0%, var(--main-color) 100%);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(230, 177, 95, 0.32);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cq-booking-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(230, 177, 95, 0.4);
+}
+
+.cq-booking-modal.show .cq-booking-modal__content {
+  animation: cqBookingIn 0.35s ease;
+}
+
+@keyframes cqBookingIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 991px) {
+  .cq-booking-modal__grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .cq-booking-modal__aside {
+    padding: 28px 24px 22px;
+    min-height: 180px;
+  }
+
+  .cq-booking-modal__aside::after {
+    inset: 12px;
+  }
+
+  .cq-booking-modal__aside-title {
+    font-size: 30px;
+  }
+
+  .cq-booking-modal__main {
+    padding: 24px 20px 22px;
+  }
+
+  .cq-booking-form__row,
+  .cq-booking-form__row--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .cq-booking-modal .modal-dialog {
+    margin: 0.75rem;
+  }
+
+  .cq-booking-modal__content {
+    border-radius: 14px;
+  }
+
+  .cq-booking-modal__title {
+    font-size: 22px;
+  }
+}
+
+/* Floating Đặt bàn ngay */
+.cq-fab-booking {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9985;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 10px 18px 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #3c0202;
+  background: linear-gradient(135deg, #f3d29a 0%, var(--main-color) 55%, #d4a052 100%);
+  box-shadow:
+    0 14px 34px rgba(230, 177, 95, 0.42),
+    0 0 0 1px rgba(255, 250, 243, 0.35) inset;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow 0.3s ease;
+  animation: cqFabFloat 3.2s ease-in-out infinite;
+}
+
+.cq-fab-booking__glow {
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45), transparent 45%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.cq-fab-booking__icon {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #3c0202;
+  color: #fffaf3;
+  box-shadow: 0 6px 14px rgba(60, 2, 2, 0.28);
+}
+
+.cq-fab-booking__text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.cq-fab-booking__eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(60, 2, 2, 0.62);
+}
+
+.cq-fab-booking__label {
+  font-family: var(--font-family-Fraunces), Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #3c0202;
+  white-space: nowrap;
+}
+
+.cq-fab-booking:hover,
+.cq-fab-booking:focus {
+  color: #3c0202;
+  text-decoration: none;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 18px 40px rgba(230, 177, 95, 0.5),
+    0 0 0 1px rgba(255, 250, 243, 0.45) inset;
+  outline: none;
+}
+
+.cq-fab-booking:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(255, 250, 243, 0.85),
+    0 0 0 6px rgba(230, 177, 95, 0.55),
+    0 18px 40px rgba(230, 177, 95, 0.45);
+}
+
+@keyframes cqFabFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 767px) {
+  .cq-fab-booking {
+    right: 16px;
+    bottom: 16px;
+    min-height: 52px;
+    padding: 8px 14px 8px 10px;
+    gap: 10px;
+  }
+
+  .cq-fab-booking__icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .cq-fab-booking__eyebrow {
+    display: none;
+  }
+
+  .cq-fab-booking__label {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cq-fab-booking {
+    animation: none;
+  }
+}
+
