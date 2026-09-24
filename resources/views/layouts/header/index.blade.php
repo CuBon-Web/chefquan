@@ -87,14 +87,14 @@
                    <!--Nav Outer End-->
 
                    <div class="links-box clearfix">
-                       <div class="link link-cart">
+                       {{-- <div class="link link-cart">
                            <a href="{{ route('listCart') }}" class="header-cart-btn" title="Giỏ hàng">
                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20" height="20" aria-hidden="true" fill="currentColor">
                                    <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 27 39.6 53.9l-64 256c-4.5 18.1-21.3 30.9-40.1 30.9H192c-17.7 0-32-14.3-32-32s14.3-32 32-32h318.5l64-256H96.9c-9.2 0-17.7 5.8-20.7 14.1L83.1 96H24C10.7 96 0 85.3 0 72S10.7 48 24 48h8.3l14.3-57.1C51.4 9.7 69.7 0 89.1 0H192c0 .1 0 .1 0 0H69.5C50.1 0 31.8 9.7 24.6 24H24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
                                </svg>
                                <span class="header-cart-btn__count cart-count js-cart-count" data-count="{{ $headerCartCount }}" @if($headerCartCount < 1) hidden @endif>{{ $headerCartCount }}</span>
                            </a>
-                       </div>
+                       </div> --}}
                        <div class="link link-btn">
                            <a href="#bookNowModal" class="theme-btn btn-style-one clearfix js-open-booking" data-open-booking data-toggle="modal" data-target="#bookNowModal">
                                <span class="btn-wrap">

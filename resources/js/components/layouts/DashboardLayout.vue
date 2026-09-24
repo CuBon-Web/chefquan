@@ -124,21 +124,17 @@ export default {
             }
           ],
         },
-        // {
-        //   icon: "mdi mdi-newspaper menu-icon",
-        //   name: "Tác Phẩm",
-        //   route_name: "",
-        //   sub: [
-        //   {
-        //       name: "Danh mục ",
-        //       path: "/project/category",
-        //     },
-        //     {
-        //       name: "Danh sách ",
-        //       path: "/project",
-        //     }
-        //   ],
-        // },
+        {
+          icon: "mdi mdi-newspaper menu-icon",
+          name: "Quản lý video",
+          route_name: "",
+          sub: [
+            {
+              name: "Danh sách ",
+              path: "/video",
+            }
+          ],
+        },
         // {
         //   icon: "mdi mdi-newspaper menu-icon",
         //   name: "Dịch vụ",
@@ -223,10 +219,10 @@ export default {
             //   name: "Combo món ăn",
             //   path: "/foodcombo",
             // },
-            // {
-            //   name: "Gallery",
-            //   path: "/albumAffter",
-            // },
+            {
+              name: "Gallery",
+              path: "/albumAffter",
+            },
           ],
         },
         // {

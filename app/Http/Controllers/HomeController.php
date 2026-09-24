@@ -55,6 +55,26 @@ class HomeController extends Controller
             ->orderBy('sort')
             ->orderBy('id', 'DESC')
             ->get();
+        $dishCate = BlogCategory::where('status', 1)
+            ->where(function ($q) {
+                $q->where('slug', 'mon-an')
+                    ->orWhere('name', 'LIKE', '%Món ăn%')
+                    ->orWhere('name', 'LIKE', '%Mon an%')
+                    ->orWhere('name', 'LIKE', '%"Món ăn"%')
+                    ->orWhere('name', 'LIKE', '%"Mon an"%');
+            })
+            ->first(['id', 'slug', 'name']);
+        $dishCateSlug = $dishCate->slug ?? 'mon-an';
+        $data['dishCateSlug'] = $dishCateSlug;
+        $data['signatureDishes'] = Blog::where('status', 1)
+            ->where('category', $dishCateSlug)
+            ->orderBy('id', 'DESC')
+            ->limit(12)
+            ->get(['id', 'title', 'slug', 'image', 'description', 'category']);
+        $data['homeVideos'] = Video::where('status', 1)
+            ->orderBy('id', 'DESC')
+            ->limit(12)
+            ->get(['id', 'name', 'image', 'link', 'status']);
         $data['gallery'] = AlbumAffter::where('status',1)->orderBy('sort')->get();
         $data['homePro'] = Product::where(['status'=>1,'discountStatus'=>1])
             ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description','status_variant','discountStatus','home_status')

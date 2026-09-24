@@ -15651,22 +15651,15 @@ function _initScrollbar(className) {
           name: "Danh sách ",
           path: "/foodcombo"
         }]
+      }, {
+        icon: "mdi mdi-newspaper menu-icon",
+        name: "Quản lý video",
+        route_name: "",
+        sub: [{
+          name: "Danh sách ",
+          path: "/video"
+        }]
       }, // {
-      //   icon: "mdi mdi-newspaper menu-icon",
-      //   name: "Tác Phẩm",
-      //   route_name: "",
-      //   sub: [
-      //   {
-      //       name: "Danh mục ",
-      //       path: "/project/category",
-      //     },
-      //     {
-      //       name: "Danh sách ",
-      //       path: "/project",
-      //     }
-      //   ],
-      // },
-      // {
       //   icon: "mdi mdi-newspaper menu-icon",
       //   name: "Dịch vụ",
       //   route_name: "",
@@ -15723,7 +15716,7 @@ function _initScrollbar(className) {
         }, {
           name: "Phần why choose",
           path: "/why-choose"
-        } // {
+        }, // {
         //   name: "Quy trình làm việc",
         //   path: "/process-step",
         // },
@@ -15735,11 +15728,10 @@ function _initScrollbar(className) {
         //   name: "Combo món ăn",
         //   path: "/foodcombo",
         // },
-        // {
-        //   name: "Gallery",
-        //   path: "/albumAffter",
-        // },
-        ]
+        {
+          name: "Gallery",
+          path: "/albumAffter"
+        }]
       }, // {
       //   icon: "mdi mdi-shopping-music menu-icon",
       //   name: "Quản lý đơn hàng",

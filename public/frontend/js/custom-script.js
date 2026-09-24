@@ -224,6 +224,85 @@ if($('.main-header').length){
 			}
 		});
 	}
+
+	// Signature dishes slider (Món ăn)
+	if ($('.signature-slider').length) {
+		new Swiper('.signature-slider', {
+			slidesPerView: 1.4,
+			spaceBetween: 16,
+			speed: 700,
+			loop: false,
+			watchOverflow: true,
+			breakpoints: {
+				576: {
+					slidesPerView: 2.2,
+					spaceBetween: 18,
+				},
+				768: {
+					slidesPerView: 3.2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 4,
+					spaceBetween: 22,
+				},
+				1200: {
+					slidesPerView: 6,
+					spaceBetween: 24,
+				}
+			}
+		});
+	}
+
+	// Story video slider
+	if ($('.story-video-slider').length) {
+		new Swiper('.story-video-slider', {
+			slidesPerView: 1.25,
+			spaceBetween: 16,
+			speed: 700,
+			loop: false,
+			watchOverflow: true,
+			breakpoints: {
+				576: {
+					slidesPerView: 1.6,
+					spaceBetween: 18,
+				},
+				768: {
+					slidesPerView: 2.2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2.5,
+					spaceBetween: 22,
+				},
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 24,
+				}
+			}
+		});
+	}
+
+	// Experience gallery slider (AlbumAffter)
+	if ($('.experience-slider').length) {
+		new Swiper('.experience-slider', {
+			slidesPerView: 1.2,
+			spaceBetween: 14,
+			speed: 700,
+			loop: false,
+			watchOverflow: true,
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+					spaceBetween: 16,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 18,
+				}
+			}
+		});
+	}
 	
 	
 	//Parallax Scene for Icons

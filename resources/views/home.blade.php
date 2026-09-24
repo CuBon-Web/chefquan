@@ -165,22 +165,6 @@ document.addEventListener('DOMContentLoaded', function () {
        </div>
    </div>
 
-   <a href="#bookNowModal" class="explore-menu-btn js-open-booking" data-open-booking data-toggle="modal" data-target="#bookNowModal" aria-label="Đặt bàn ngay">
-       <span class="icon"> <img src="{{ url('frontend/images/menu-badge-arrow.png') }}" alt="" width="80" height="80" loading="lazy" decoding="async"> </span>
-   </a>
-
-   <!-- Curve at bottom -->
-   <!-- Default (desktop) curve -->
-   <svg class="bottom-curve curve-desktop" viewBox="0 0 1440 65" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-     <path fill="#f9f0df" d="M0,65 C360,0 1080,0 1440,65 L1440,65 L0,65 Z" />
-   </svg>
-
-   <!-- Less curved version for tablets/mobile -->
- <svg class="bottom-curve curve-mobile" viewBox="0 0 1440 65" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-   <path fill="#f9f0df" d="M0,65 C480,20 960,20 1440,65 L1440,65 L0,65 Z" />
- </svg>
-
-
 
 </section>
 <!--End Banner Section -->
@@ -188,13 +172,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <!--Category Section-->
 <section class="story-section section-kt">
    <div class="auto-container">
-       <div class="title-box centered story-intro wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
-           <div class="subtitle story-intro__logo">
-            <img class="no-lazy" width="200" height="60" src="{{ url($setting->logo) }}" alt="{{ $setting->company }}" decoding="async">
-           </div>
-           <div class="story-intro__ornament" aria-hidden="true"></div>
-           <h2 class="red-color story-intro__headline">Gìn giữ tinh hoa, lan tỏa hương vị Việt.</h2>
-       </div>
 
        @php
            $storyImages = json_decode($gioithieu->image ?? '[]', true);
@@ -202,30 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
        @endphp
 
        <div class="story-showcase">
-           <div class="story-showcase__content wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="80ms">
-               <div class="story-showcase__eyebrow">Câu chuyện thương hiệu</div>
-               <div class="story-showcase__copy">
-                   {!! $gioithieu->description !!}
-               </div>
-
-               <div class="story-showcase__actions">
-                   <a class="story-cta story-cta--primary js-open-booking" href="#bookNowModal" data-open-booking data-toggle="modal" data-target="#bookNowModal">
-                       <span class="story-cta__icon" aria-hidden="true">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                           </svg>
-                       </span>
-                       <span class="story-cta__text">
-                           <span class="story-cta__label">Đặt bàn ngay</span>
-                           <span class="story-cta__value">{{ $setting->phone1 }}</span>
-                       </span>
-                   </a>
-                   <a class="story-cta story-cta--ghost" href="{{ route('aboutUs') }}">
-                       <span>Xem thêm</span>
-                       <span class="story-cta__arrow" aria-hidden="true">→</span>
-                   </a>
-               </div>
-           </div>
+           
 
            <div class="story-showcase__visual wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="160ms">
                <div class="story-frame">
@@ -233,181 +187,198 @@ document.addEventListener('DOMContentLoaded', function () {
                    <div class="story-frame__media">
                        <img src="{{ url($storyCover) }}" alt="{{ $setting->company }}" width="640" height="800" loading="lazy" decoding="async">
                    </div>
-                   <div class="story-frame__badge">
-                       <span class="story-frame__badge-label">Chef Quân</span>
-                       <span class="story-frame__badge-text">Taste of Vietnam</span>
-                   </div>
                </div>
+           </div>
+           <div class="story-showcase__content wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="80ms">
+                <h2 class="story-chef__title">Chef Quân</h2>
+                <p class="story-chef__tagline">Người kể chuyện ẩm thực Việt</p>
+                {!! $gioithieu->description !!}
+
+                <ul class="story-chef__stats">
+                    <li class="story-chef__stat">
+                        <span class="story-chef__stat-icon" aria-hidden="true">
+                            <img src="/frontend/images/icon1.png" alt="">
+                        </span>
+                        <strong class="story-chef__stat-title">20+ năm</strong>
+                        <span class="story-chef__stat-text">Kinh nghiệm trong nghề</span>
+                    </li>
+                    <li class="story-chef__stat">
+                        <span class="story-chef__stat-icon" aria-hidden="true">
+                            <img src="/frontend/images/icon2.png" alt="">
+                        </span>
+                        <strong class="story-chef__stat-title">3 lần liên tiếp</strong>
+                        <span class="story-chef__stat-text">Đầu bếp tiêu biểu Quốc gia</span>
+                    </li>
+                    <li class="story-chef__stat">
+                        <span class="story-chef__stat-icon" aria-hidden="true">
+                            <img src="/frontend/images/icon3.png" alt="">
+                        </span>
+                        <strong class="story-chef__stat-title">Chủ tịch</strong>
+                        <span class="story-chef__stat-text">Hội Đầu bếp Việt Nam</span>
+                    </li>
+                    <li class="story-chef__stat">
+                        <span class="story-chef__stat-icon" aria-hidden="true">
+                            <img src="/frontend/images/icon4.png" alt="">
+                        </span>
+                        <strong class="story-chef__stat-title">Thành viên danh dự</strong>
+                        <span class="story-chef__stat-text">Worldchefs (Thế giới)</span>
+                    </li>
+                </ul>
+
+                <a class="story-chef__btn" href="{{ route('aboutUs') }}">Khám phá Chef Quân</a>
            </div>
        </div>
    </div>
 </section>
 
-<section class="menu-card-style-section section-kt">
+<section class="menu-card-style-section taste-vn-section section-kt">
    <div class="auto-container">
-       <div class="title-box centered mb-5 wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
-           <div class="title-badge"> <img src="{{ url($setting->logo) }}" alt="{{ $setting->company }}" width="120" height="40" loading="lazy" decoding="async"> </div>
-           <h2>Taste Of Vietnam</h2>
+       <div class="taste-vn__header title-box centered mb-5 wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
+           <h2 class="taste-vn__title">Taste Of Vietnam</h2>
+           <p class="taste-vn__subtitle">Không chỉ là một nhà hàng. Đó là một hành trình qua hương vị Việt.</p>
        </div>
-       <div class="menu-card-main">
-       <!-- menu card corner images -->
-           <img class="menu-card-corner top-left" src="{{ url('frontend/images/menucard-corner-left-top.png') }}" alt="" width="80" height="80" loading="lazy" decoding="async">
-           <img class="menu-card-corner top-right" src="{{ url('frontend/images/menucard-corner-right-top.png') }}" alt="" width="80" height="80" loading="lazy" decoding="async">
-           <img class="menu-card-corner bottom-left" src="{{ url('frontend/images/menucard-corner-left-bottom.png') }}" alt="" width="80" height="80" loading="lazy" decoding="async">
-           <img class="menu-card-corner bottom-right" src="{{ url('frontend/images/menucard-corner-right-bottom.png') }}" alt="" width="80" height="80" loading="lazy" decoding="async">
+
+       <div class="taste-vn__grid">
        @forelse(($foodCombos ?? collect()) as $index => $combo)
        @php
            $comboImages = $combo->images_array;
            $cover = !empty($comboImages[0]) ? $comboImages[0] : asset('frontend/images/resource/maindish1.jpg');
-           $hasSale = $combo->sale_price !== null && (float) $combo->sale_price > 0 && (float) $combo->sale_price < (float) $combo->price;
-           $imageWow = $index % 2 === 0 ? 'fadeInLeft' : 'fadeInRight';
-           $contentWow = $index % 2 === 0 ? 'fadeInRight' : 'fadeInLeft';
+           $comboName = trim((string) $combo->name);
+           $tasteLabel = 'Hương vị';
+           $tasteName = $comboName;
+           if (preg_match('/^hương\s*vị\s*[:\-\/]?\s*(.+)$/iu', $comboName, $m)) {
+               $tasteName = trim($m[1]);
+           }
+           $tasteDesc = trim(preg_replace('/\s+/', ' ', strip_tags((string) ($combo->description ?? ''))));
+           if ($tasteDesc === '') {
+               $tasteDesc = 'Khám phá hành trình ẩm thực cùng Chef Quân.';
+           }
+           $iconType = $index % 4;
        @endphp
-       <div class="menu-card-style {{ $index % 2 === 0 ? 'alternate' : '' }}">
-           <div class="row clearfix">
-               <div class="image-col col-lg-6 col-md-12 col-sm-12 wow {{ $imageWow }}" data-wow-duration="1000ms" data-wow-delay="60ms">
-                   <div class="inner">
-                       <div class="image">
-                           <a href="{{ route('foodComboDetail', ['slug' => $combo->slug]) }}">
-                               <img src="{{ url($cover) }}" alt="{{ $combo->name }}" width="800" height="600" loading="lazy" decoding="async">
-                           </a>
-                       </div>
-                   </div>
-               </div>
-
-               <div class="menu-col col-lg-6 col-md-12 col-sm-12 wow {{ $contentWow }}" data-wow-duration="1000ms" data-wow-delay="140ms">
-                   <div class="inner">
-                       <div class="title-box-2">
-                        <div class="combo-heading {{ $hasSale ? 'is-sale' : '' }}">
-                           @if($hasSale)
-                             <div class="combo-heading__note">Ưu đãi đặc biệt</div>
+           <article class="taste-vn-card wow fadeInUp" data-wow-duration="900ms" data-wow-delay="{{ ($index % 4) * 80 }}ms">
+               <a class="taste-vn-card__media" href="{{ route('foodComboDetail', ['slug' => $combo->slug]) }}" title="{{ $comboName }}">
+                   <img src="{{ url($cover) }}" alt="{{ $comboName }}" width="640" height="420" loading="lazy" decoding="async">
+               </a>
+               <div class="taste-vn-card__body">
+                   <div class="taste-vn-card__top">
+                       <span class="taste-vn-card__icon" aria-hidden="true">
+                           @if($iconType === 0)
+                           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 28c2-6 4.5-10 8-12 3.5 2 6 6 8 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10 28h20M14 22c1.5 1.5 3.5 2.2 6 2.2s4.5-.7 6-2.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="12" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                           @elseif($iconType === 1)
+                           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 22c2.5-5 6-8 12-9 6 1 9.5 4 12 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M11 22h18M14 26h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 14c1.2-2 2.8-3 4-3s2.8 1 4 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                           @elseif($iconType === 2)
+                           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 26c2-7 5.5-12 10-14 4.5 2 8 7 10 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 26h16M15 18c1.4 1.5 3 2.2 5 2.2s3.6-.7 5-2.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="10" r="1.8" fill="currentColor"/></svg>
+                           @else
+                           <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="18" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M12 28c2.2-3 5-4.5 8-4.5s5.8 1.5 8 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M20 11v14M15 18h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
                            @endif
-                           <h3 class="combo-heading__title">
-                               <a href="{{ route('foodComboDetail', ['slug' => $combo->slug]) }}">{{ $combo->name }}</a>
+                       </span>
+                       <div class="taste-vn-card__heading">
+                           {{-- <span class="taste-vn-card__eyebrow">{{ $tasteLabel }}</span> --}}
+                           <h3 class="taste-vn-card__name">
+                               <a href="{{ route('foodComboDetail', ['slug' => $combo->slug]) }}">{{ $tasteName }}</a>
                            </h3>
-                           <span class="combo-heading__leader" aria-hidden="true"></span>
-                           <div class="combo-heading__price">
-                                @if($hasSale)
-                                    <strong class="combo-heading__current">{{ number_format((float) $combo->sale_price) }}₫</strong>
-                                    <del class="combo-heading__old">{{ number_format((float) $combo->price) }}₫</del>
-                                   
-                                @else
-                                    <strong class="combo-heading__current">{{ number_format((float) $combo->price) }}₫</strong>
-                                @endif
-                            </div>
-                        </div>
-                           @if($combo->description)
-                           <div class="description">
-                            {!! $combo->description !!}
-                           </div>
-                           @endif
-                           <div class="menu">
-                            {!! $combo->menu !!}
-                           </div>
-                           <div class="combo-actions">
-                               <a class="combo-more-btn combo-more-btn--primary js-open-booking" href="#bookNowModal" data-open-booking data-toggle="modal" data-target="#bookNowModal">
-                                   <span>Đặt bàn</span>
-                               </a>
-                               <a class="combo-more-btn combo-more-btn--ghost" href="{{ route('foodComboDetail', ['slug' => $combo->slug]) }}">
-                                   <span>Xem thêm</span>
-                               </a>
-                           </div>
                        </div>
                    </div>
+                   <p class="taste-vn-card__desc">{{ \Illuminate\Support\Str::limit($tasteDesc, 90) }}</p>
+                   <a class="taste-vn-card__link" href="{{ route('foodComboDetail', ['slug' => $combo->slug]) }}">
+                       Khám phá <span aria-hidden="true">→</span>
+                   </a>
                </div>
-           </div>
-       </div>
+           </article>
        @empty
-       <div class="text-center py-4">
-           <p>Chưa có combo món ăn để hiển thị.</p>
-       </div>
+           <div class="taste-vn__empty">
+               <p>Chưa có combo món ăn để hiển thị.</p>
+           </div>
        @endforelse
-
        </div>
    </div>
 </section>
-<!-- Convenient Foods Section -->
-<section class="convenient-section">
+<!-- Signature Of Chef Quân — Món ăn -->
+<section class="signature-section section-kt">
    <div class="auto-container">
-       <div class="convenient-panel wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="60ms">
-           <div class="convenient-products">
-               <div class="convenient-products__head wow fadeInDown" data-wow-duration="800ms" data-wow-delay="0ms">
-                   <h2 class="convenient-script">Sản phẩm</h2>
-                   <div class="convenient-eyebrow">Hương vị truyền thống</div>
-               </div>
+       <div class="signature__header title-box centered wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
+           <h2 class="signature__title">Signature Of Chef Quân</h2>
+           <p class="signature__subtitle">Những món ăn kể câu chuyện riêng</p>
+       </div>
 
-               <div class="convenient-products-slider swiper">
+       <div class="signature-slider-wrap wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="80ms">
+           <div class="signature-slider swiper">
+               <div class="swiper-wrapper">
+                   @forelse(($signatureDishes ?? collect()) as $index => $item)
+                   @php
+                       $dishUrl = route('detailBlog', ['slug' => $item->slug]);
+                       $dishTitle = languageName($item->title);
+                       $dishDesc = trim(preg_replace('/\s+/', ' ', strip_tags((string) languageName($item->description ?? ''))));
+                       if ($dishDesc === '') {
+                           $dishDesc = 'Khám phá câu chuyện món ăn cùng Chef Quân.';
+                       }
+                       $dishCover = !empty($item->image) ? url($item->image) : asset('frontend/images/resource/maindish1.jpg');
+                   @endphp
+                   <div class="swiper-slide">
+                       <article class="signature-card">
+                           <a class="signature-card__media" href="{{ $dishUrl }}" title="{{ $dishTitle }}">
+                               <img src="{{ $dishCover }}" alt="{{ $dishTitle }}" width="480" height="320" loading="lazy" decoding="async">
+                           </a>
+                           <h3 class="signature-card__title">
+                               <a href="{{ $dishUrl }}" title="{{ $dishTitle }}">{{ $dishTitle }}</a>
+                           </h3>
+                           <p class="signature-card__desc">{{ \Illuminate\Support\Str::limit($dishDesc, 72) }}</p>
+                       </article>
+                   </div>
+                   @empty
+                   <div class="swiper-slide">
+                       <article class="signature-card signature-card--empty">
+                           <p class="signature-card__desc">Chưa có bài viết trong danh mục Món ăn.</p>
+                       </article>
+                   </div>
+                   @endforelse
+               </div>
+           </div>
+       </div>
+
+       <div class="signature__actions wow fadeInUp" data-wow-duration="900ms" data-wow-delay="120ms">
+           <a class="signature__btn" href="{{ route('listCateBlog', ['slug' => $dishCateSlug ?? 'mon-an']) }}">Xem thêm món ăn</a>
+       </div>
+   </div>
+</section>
+
+<!-- Story Video Section -->
+<section class="story-video-section section-kt">
+   <div class="auto-container">
+       <div class="story-video__layout">
+           <div class="story-video__intro wow fadeInLeft" data-wow-duration="900ms" data-wow-delay="0ms">
+               <h2 class="story-video__title">Kể chuyện Việt qua một món ăn</h2>
+               <p class="story-video__desc">Những câu chuyện phía sau nguyên liệu, bí quyết chế biến và văn hóa Việt Nam.</p>
+               <a class="story-video__btn" href="{{ route('videoReview') }}">Xem tất cả video</a>
+           </div>
+
+           <div class="story-video__slider-wrap wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="80ms">
+               <div class="story-video-slider swiper">
                    <div class="swiper-wrapper">
-                    @foreach ($homePro as $item)
-                    <div class="swiper-slide">
-                        @include('layouts.product.item', ['pro' => $item])
-                    </div>
-                    @endforeach
-                   </div>
-
-                   <div class="convenient-nav convenient-nav--prev"><span class="fal fa-angle-left"></span></div>
-                   <div class="convenient-nav convenient-nav--next"><span class="fal fa-angle-right"></span></div>
-               </div>
-           </div>
-       </div>
-   </div>
-</section>
-<!-- End Convenient Foods Section -->
-
-
-<!--Why Us Section-->
-<section class="why-us-two section-kt">
-   <div class="auto-container">
-       <div class="title-box centered mb-5 wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
-           <div class="subtitle"><span>why choose us</span></div>
-           <h2>Tại sao chọn chúng tôi</h2>
-       </div>
-       <div class="row clearfix">
-           <!--Block-->
-           @foreach ($whyChoose as $item)
-            <div class="why-block-two col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="inner-box wow fadeInUp" data-wow-duration="900ms" data-wow-delay="{{ ($loop->index % 4) * 100 }}ms">
-                    <div class="image-box"><img src="{{ url($item->image) }}" alt="{{ $item->title }}" width="400" height="400" loading="lazy" decoding="async"></div>
-                    <div class="over-box">
-                        <h6>{{ $item->title }}</h6>
-                        <div class="why-desc-wrap">
-                            <p class="why-desc">{{ $item->description }}</p>
-                            <button type="button" class="why-desc-toggle">Xem thêm</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           @endforeach
-       </div>
-
-       <div class="fact-counter">
-           <div class="row clearfix">
-               <div class="fact-block col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="850ms" data-wow-delay="0ms">
-                   <div class="inner clearfix">
-                       <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="20" data-speed="2000">20</span><i>năm</i></div></div>
-                       <div class="fact-title">kinh nghiệm</div>
-                       <p> Hơn 20 năm gắn bó với nghề bếp và hành trình phát triển ẩm thực Việt.</p>
-                   </div>
-               </div>
-               <div class="fact-block col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="850ms" data-wow-delay="100ms">
-                   <div class="inner clearfix">
-                       <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="3" data-speed="1500">0</span><i>lần</i></div></div>
-                       <div class="fact-title">Đầu bếp Tiêu biểu</div>
-                       <p>Được vinh danh 3 năm liên tiếp: 2017 – 2018 – 2019.</p>
-                   </div>
-               </div>
-               <div class="fact-block col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="850ms" data-wow-delay="200ms">
-                   <div class="inner clearfix">
-                       <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="200" data-speed="1000">200</span><i>+</i></div></div>
-                       <div class="fact-title">Món Ăn</div>
-                       <p> Những món ăn được nghiên cứu, sáng tạo và hoàn thiện qua hành trình gắn bó với ẩm thực Việt. </p>
-                   </div>
-               </div>
-               <div class="fact-block col-lg-3 col-md-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="850ms" data-wow-delay="300ms">
-                   <div class="inner clearfix">
-                       <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="10" data-speed="1000">0</span><i>+</i></div></div>
-                       <div class="fact-title">Sự kiện & hoạt động ẩm thực</div>
-                       <p> Hành trình tham gia, đồng hành và lan tỏa giá trị ẩm thực Việt qua nhiều hoạt động ý nghĩa. </p>
+                       @forelse(($homeVideos ?? collect()) as $item)
+                       @php
+                           $videoName = trim((string) ($item->name ?? ''));
+                           $videoLink = trim((string) ($item->link ?? ''));
+                           $videoCover = !empty($item->image) ? url($item->image) : asset('frontend/images/resource/maindish1.jpg');
+                       @endphp
+                       <div class="swiper-slide">
+                           <article class="story-video-card">
+                               <a class="story-video-card__media lightbox-image"
+                                  href="{{ $videoLink !== '' ? $videoLink : 'javascript:;' }}"
+                                  title="{{ $videoName }}">
+                                   <img src="{{ $videoCover }}" alt="{{ $videoName }}" width="480" height="320" loading="lazy" decoding="async">
+                                   <span class="story-video-card__play" aria-hidden="true"></span>
+                               </a>
+                               <h3 class="story-video-card__title">{{ $videoName }}</h3>
+                           </article>
+                       </div>
+                       @empty
+                       <div class="swiper-slide">
+                           <article class="story-video-card story-video-card--empty">
+                               <p class="story-video-card__title">Chưa có video để hiển thị.</p>
+                           </article>
+                       </div>
+                       @endforelse
                    </div>
                </div>
            </div>
@@ -415,32 +386,97 @@ document.addEventListener('DOMContentLoaded', function () {
    </div>
 </section>
 
-<!--Testimonials Section-->
-<section class="testimonials-two section-kt">
+<!-- VICA Section -->
+<section class="vica-section section-kt">
    <div class="auto-container">
-       
-       <div class="title-box centered mb-5 wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
-           <div class="subtitle"><span>testimonials</span></div>
-           <h2 class="red-color">Khách hàng nói gì về chúng tôi</h2>
+       <div class="vica__layout wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
+           <div class="vica__brand">
+               <img class="vica__brand-mark" src="{{ asset('frontend/images/logovica.png') }}" alt="VICA" width="120" height="120" loading="lazy" decoding="async">
+           </div>
+
+           <div class="vica__divider" aria-hidden="true"></div>
+
+           <div class="vica__main">
+               <div class="vica__photo">
+                   <img src="{{ asset('frontend/images/image1.jpg') }}" alt="Chef Quân – Hội Đầu bếp Việt Nam" width="420" height="280" loading="lazy" decoding="async">
+               </div>
+               <div class="vica__copy">
+                   <h2 class="vica__title">Lan tỏa giá trị nghề bếp</h2>
+                   <p class="vica__desc">Chef Quân – Chủ tịch Hội Đầu bếp Việt Nam (VICA) không chỉ nấu ăn, không chỉ giữ nghề, mà còn truyền nghề và xây dựng thế hệ đầu bếp Việt Nam tiếp theo.</p>
+                   <a class="vica__btn" href="#">Khám phá VICA</a>
+               </div>
+           </div>
+
+           <div class="vica__divider" aria-hidden="true"></div>
+
+           <ul class="vica__features">
+               <li class="vica__feature">
+                   <span class="vica__feature-icon" aria-hidden="true">
+                     <img src="/frontend/images/icon5.png" alt="">
+                   </span>
+                   <span class="vica__feature-text">
+                       <strong>Đào tạo</strong>
+                       <span>Đầu bếp chuyên nghiệp</span>
+                   </span>
+               </li>
+               <li class="vica__feature">
+                   <span class="vica__feature-icon" aria-hidden="true">
+                    <img src="/frontend/images/icon6.png" alt="">
+                   </span>
+                   <span class="vica__feature-text">
+                       <strong>Hoạt động</strong>
+                       <span>Cộng đồng &amp; sự kiện</span>
+                   </span>
+               </li>
+               <li class="vica__feature">
+                   <span class="vica__feature-icon" aria-hidden="true">
+                    <img src="/frontend/images/icon7.png" alt="">
+                   </span>
+                   <span class="vica__feature-text">
+                       <strong>Kết nối</strong>
+                       <span>Ẩm thực Việt Nam &amp; thế giới</span>
+                   </span>
+               </li>
+           </ul>
        </div>
-       <div class="carousel-box wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
-           <div class="testimonial-slider owl-theme owl-carousel">
-            @foreach ($ReviewCus as $item)
-                 <!--Slide Item-->
-               <div class="testi-block">
-                <div class="inner-box">
-                    <div class="rating"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></div>
-                    <div class="text">{{languageName($item->content)}}</div>
-                    <div class="auth-info">
-                        <div class="image"><img src="{{ url($item->avatar) }}" alt="{{ languageName($item->name) }}" width="80" height="80" loading="lazy" decoding="async"></div>
-                        <div class="auth-title">{{languageName($item->name)}} -<span class="location">{{languageName($item->position)}}</span> </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-              
+   </div>
+</section>
 
+<!-- Experience — Taste Of Vietnam -->
+<section class="experience-section section-kt">
+   <div class="auto-container">
+       <div class="experience__layout">
+           <div class="experience__intro wow fadeInLeft" data-wow-duration="900ms" data-wow-delay="0ms">
+               <p class="experience__eyebrow">Trải nghiệm</p>
+               <h2 class="experience__title">Taste Of Vietnam</h2>
+               <p class="experience__desc">Một không gian Hà Nội xưa trong căn biệt thự Pháp cổ, nơi mỗi món ăn là một câu chuyện.</p>
+               <a class="experience__btn js-open-booking" href="#bookNowModal" data-open-booking data-toggle="modal" data-target="#bookNowModal">Đặt bàn ngay</a>
+           </div>
 
+           <div class="experience__slider-wrap wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="80ms">
+               <div class="experience-slider swiper">
+                   <div class="swiper-wrapper">
+                       @forelse(($gallery ?? collect()) as $item)
+                       @php
+                           $expImg = $item->after ?: $item->before;
+                           $expTitle = trim((string) ($item->title ?? ''));
+                       @endphp
+                       @if(!empty($expImg))
+                       <div class="swiper-slide">
+                           <figure class="experience-card">
+                               <img src="{{ url($expImg) }}" alt="{{ $expTitle !== '' ? $expTitle : 'Taste Of Vietnam' }}" width="360" height="480" loading="lazy" decoding="async">
+                           </figure>
+                       </div>
+                       @endif
+                       @empty
+                       <div class="swiper-slide">
+                           <figure class="experience-card experience-card--empty">
+                               <span>Chưa có ảnh album.</span>
+                           </figure>
+                       </div>
+                       @endforelse
+                   </div>
+               </div>
            </div>
        </div>
    </div>
@@ -549,63 +585,4 @@ document.addEventListener('DOMContentLoaded', function () {
    </div>
 </section>
 
-<!--Recnt Updates Section-->
-<section class="news-section section-kt">
-   <div class="auto-container">
-       <div class="title-box centered mb-5 wow fadeInUp" data-wow-duration="900ms" data-wow-delay="0ms">
-           <div class="subtitle"><span>recent updates</span></div>
-           <h2 class="red-color">Bài viết mới nhất</h2>
-       </div>
-       <div class="news-slider-wrap wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
-           <div class="news-slider swiper">
-               <div class="swiper-wrapper">
-                   @forelse(($hotnews ?? collect()) as $index => $item)
-                   @php
-                       $blogUrl = route('detailBlog', ['slug' => $item->slug]);
-                       $blogTitle = languageName($item->title);
-                       $blogDate = $item->created_at ? $item->created_at->locale('vi') : null;
-                   @endphp
-                   <div class="swiper-slide">
-                       <div class="news-block">
-                           <div class="inner-box">
-                               <div class="image-box">
-                                   <div class="image">
-                                       <a href="{{ $blogUrl }}" title="{{ $blogTitle }}">
-                                           <img src="{{ url($item->image) }}" alt="{{ $blogTitle }}" width="600" height="400" loading="lazy" decoding="async">
-                                       </a>
-                                   </div>
-                                   <div class="over-content">
-                                       @if($blogDate)
-                                       <div class="date">{{ $blogDate->format('d') }} <span>{{ $blogDate->translatedFormat('M') }} | {{ $blogDate->format('Y') }}</span></div>
-                                       @endif
-                                       @if(!empty($item->category))
-                                       <div class="cat">{{ $item->category }}</div>
-                                       @endif
-                                       <h4><a href="{{ $blogUrl }}" title="{{ $blogTitle }}">{{ $blogTitle }}</a></h4>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   @empty
-                   <div class="swiper-slide">
-                       <div class="news-block">
-                           <div class="inner-box">
-                               <div class="image-box">
-                                   <div class="over-content">
-                                       <h4>Chưa có bài viết.</h4>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   @endforelse
-               </div>
-           </div>
-           <div class="news-nav news-nav--prev"><span class="fal fa-angle-left"></span></div>
-           <div class="news-nav news-nav--next"><span class="fal fa-angle-right"></span></div>
-       </div>
-       
-   </div>
-</section>
 @endsection

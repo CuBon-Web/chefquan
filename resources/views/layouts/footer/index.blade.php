@@ -1,55 +1,39 @@
  <!--Main Footer-->
- <footer class="main-footer">
-   <div class="upper-section">
-       <div class="fluid-section">
-           <div class="row clearfix">
-               <!--Footer Col-->
-               <div class="footer-col footer-map-col col-lg-6 col-md-12 col-sm-12 px-0">
-                   <div class="footer-map">
-                       {!!$setting->iframe_map!!}
-                   </div>
+ <footer class="main-footer footer-invite">
+   <div class="footer-invite__banner">
+       <div class="auto-container">
+           <div class="footer-invite__layout">
+               <div class="footer-invite__portrait">
+                   <img src="{{ asset('frontend/images/men.png') }}" alt="Chef Quân" width="320" height="400" loading="lazy" decoding="async">
                </div>
-               <!--Footer Col-->
-               <div class="footer-col info-col col-lg-6 col-md-12 col-sm-12 px-0">
-                   <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                       <div class="content">
-                           <div class="logo"><a href="{{ route('home') }}" title="{{$setting->company}}"><img src="{{ url($setting->logo) }}" alt="{{$setting->company}}" title="{{$setting->company}}" width="160" height="50" loading="lazy" decoding="async"></a></div>
-                           <div class="info">
-                               <h6>visit us </h6>
-                               <ul>
-                                   <li>{{languageName($setting->address)}}</li>
-                                   <li>{{languageName($setting->time_open)}}</li>
-                                   <li><a href="mailto:{{$setting->email}}">{{$setting->email}}</a></li>
-                                   <li><a href="tel:{{$setting->phone}}">Booking Request : {{$setting->phone}}</a></li>
-                                   
-                               </ul>
-                           </div>
-                       </div>
 
-                       <!-- last footer -->
-                       <div class="bottom_footer">
-                       <!-- container start -->
-                         <div class="auto-container">
-                           <!-- row start -->
-                           <div class="row clearfix">
-                             <div class="col-lg-4 col-md-4 col-sm-12">
-                                 <p>© 2025 All Rights Reserved</p>
-                             </div>
-
-                             
-
-                             <div class="col-lg-4 col-md-4 col-sm-12">
-                                 <p class="developer_text">Crafted by <a href="" target="blank">Tuấn Anh Dev</a></p>
-                             </div>
-                           </div>
-                         <!-- row end -->
-                         </div>
-                         <!-- container end -->
-                       </div>
-
-                   </div>
+               <div class="footer-invite__content">
+                   <h2 class="footer-invite__script">Hẹn bạn tại bàn ăn</h2>
+                   <p class="footer-invite__brand">Chef Quân – Taste Of Vietnam</p>
+                   <ul class="footer-invite__meta">
+                       <li>
+                           <i class="far fa-map-marker-alt" aria-hidden="true"></i>
+                           <span>{{ $setting->address1 ?: languageName($setting->address) }}</span>
+                       </li>
+                       <li>
+                           <i class="far fa-phone" aria-hidden="true"></i>
+                           <a href="tel:{{ $setting->phone1 ?: $setting->phone }}">{{ $setting->phone1 ?: $setting->phone }}</a>
+                       </li>
+                   </ul>
                </div>
-               
+
+               <div class="footer-invite__action">
+                   <a class="footer-invite__btn js-open-booking" href="#bookNowModal" data-open-booking data-toggle="modal" data-target="#bookNowModal">Đặt bàn ngay</a>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="footer-invite__bottom">
+       <div class="auto-container">
+           <div class="footer-invite__bottom-row">
+               <p>© {{ date('Y') }} All Rights Reserved</p>
+               <p class="developer_text">Crafted by <a href="" target="_blank" rel="noopener">Tuấn Anh Dev</a></p>
            </div>
        </div>
    </div>
