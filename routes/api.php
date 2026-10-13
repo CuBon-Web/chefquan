@@ -221,6 +221,8 @@ Route::group(['namespace'=>'Api','middleware'=>'auth:api'],function(){
 	Route::group(['prefix'=>'website','namespace'=>'Website'], function(){
 		Route::post('banner','BannerController@createOrUpdate')->middleware('rbac.permission:website.update');
 		Route::get('list-banner','BannerController@list')->middleware('rbac.permission:website.view');
+		Route::post('tov-banner','TovBannerController@createOrUpdate')->middleware('rbac.permission:website.update');
+		Route::get('list-tov-banner','TovBannerController@list')->middleware('rbac.permission:website.view');
 		Route::post('partner','PartnerController@createOrUpdate')->middleware('rbac.permission:website.update');
 		Route::post('prize','PartnerController@createOrUpdatePrize')->middleware('rbac.permission:website.update');
 		Route::get('list-partner','PartnerController@listPartner')->middleware('rbac.permission:website.view');

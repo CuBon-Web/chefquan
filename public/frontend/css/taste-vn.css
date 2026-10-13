@@ -1,0 +1,1228 @@
+/* Taste Of Vietnam page */
+:root {
+    --tov-navy: #1c2a44;
+    --tov-orange: #e8772e;
+    --tov-orange-dark: #cf6420;
+    --tov-cream: #faf6ef;
+    --tov-green: #13261f;
+    --tov-text: #5a5a5a;
+}
+
+/* Shared */
+.tov-eyebrow {
+    margin: 0 0 10px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tov-navy);
+}
+
+.tov-eyebrow--light {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.tov-heading {
+    margin: 0 0 14px;
+    font-family: var(--font-family-Fraunces), "Playfair Display", Georgia, serif;
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--tov-navy);
+    text-transform: none;
+}
+
+.tov-heading--light {
+    color: #fff;
+}
+
+.tov-text {
+    margin: 0 0 26px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--tov-text);
+}
+
+.tov-text--light {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.tov-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 24px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.tov-btn:hover,
+.tov-btn:focus {
+    text-decoration: none;
+}
+
+.tov-btn--primary {
+    background: var(--tov-orange);
+    border-color: var(--tov-orange);
+    color: #fff;
+}
+
+.tov-btn--primary:hover,
+.tov-btn--primary:focus {
+    background: var(--tov-orange-dark);
+    border-color: var(--tov-orange-dark);
+    color: #fff;
+}
+
+.tov-btn--outline {
+    border-color: var(--tov-navy);
+    color: var(--tov-navy);
+    background: transparent;
+}
+
+.tov-btn--outline:hover,
+.tov-btn--outline:focus {
+    background: var(--tov-navy);
+    color: #fff;
+}
+
+.tov-btn--outline-light {
+    border-color: rgba(255, 255, 255, 0.85);
+    color: #fff;
+    background: transparent;
+}
+
+.tov-btn--outline-light:hover,
+.tov-btn--outline-light:focus {
+    background: #fff;
+    color: var(--tov-green);
+}
+
+.tov-btn--outline-accent {
+    border-color: var(--tov-orange);
+    color: var(--tov-orange);
+    background: transparent;
+}
+
+.tov-btn--outline-accent:hover,
+.tov-btn--outline-accent:focus {
+    background: var(--tov-orange);
+    color: #fff;
+}
+
+.tov-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--tov-navy);
+    text-decoration: none;
+}
+
+.tov-link:hover,
+.tov-link:focus {
+    color: var(--tov-orange);
+    text-decoration: none;
+}
+
+.tov-play-icon {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.35);
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.tov-play-icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    border-style: solid;
+    border-width: 7px 0 7px 12px;
+    border-color: transparent transparent transparent #fff;
+    transform: translate(-50%, -50%);
+}
+
+.tov-play-icon--sm {
+    width: 36px;
+    height: 36px;
+}
+
+.tov-play-icon--sm::before {
+    border-width: 5px 0 5px 9px;
+}
+
+.tov-empty {
+    margin: 0;
+    padding: 32px 0;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #888;
+}
+
+.tov-empty--light {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tov-split {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 2.2fr);
+    gap: 32px 48px;
+    align-items: center;
+}
+
+.tov-split__intro,
+.tov-split__body {
+    min-width: 0;
+}
+
+.tov-offers .swiper-slide,
+.tov-combo .swiper-slide,
+.tov-reviews .swiper-slide {
+    height: auto;
+}
+
+/* Hero */
+.tov-hero {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.tov-hero__slider .swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 620px;
+    height: auto;
+    overflow: hidden;
+}
+
+.tov-hero__slider.swiper-fade .swiper-slide {
+    pointer-events: none;
+    transition-property: opacity;
+}
+
+.tov-hero__slider.swiper-fade .swiper-slide-active {
+    pointer-events: auto;
+}
+
+.tov-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: var(--tov-bg-desktop);
+    background-size: cover;
+    background-position: center;
+}
+
+.tov-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(10, 10, 10, 0.82) 0%, rgba(10, 10, 10, 0.55) 40%, rgba(10, 10, 10, 0.1) 75%);
+    pointer-events: none;
+}
+
+.tov-hero__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 160px;
+    padding-bottom: 90px;
+}
+
+.tov-hero__controls-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 36px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.tov-hero__content {
+    max-width: 540px;
+}
+
+.tov-hero__title {
+    margin: 0 0 18px;
+    font-family: var(--font-family-Fraunces), "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: #fff;
+    text-transform: none;
+}
+
+.tov-hero__desc {
+    margin: 0 0 30px;
+    max-width: 460px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.tov-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 24px;
+}
+
+.tov-hero__play {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tov-hero__play:hover,
+.tov-hero__play:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tov-hero__play:hover .tov-play-icon {
+    background: var(--tov-orange);
+    border-color: var(--tov-orange);
+}
+
+.tov-hero__play-text {
+    max-width: 90px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.tov-hero__controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    color: #fff;
+    pointer-events: auto;
+}
+
+.tov-hero__counter {
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    margin-right: 6px;
+}
+
+.tov-hero__nav {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.tov-hero__nav:hover {
+    background: var(--tov-orange);
+    border-color: var(--tov-orange);
+}
+
+/* Offers */
+.tov-offers {
+    position: relative;
+    padding: 72px 0;
+    background: var(--tov-cream);
+}
+
+.tov-offer-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgba(28, 42, 68, 0.07);
+}
+
+.tov-offer-card__media {
+    display: block;
+    overflow: hidden;
+}
+
+.tov-offer-card__media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.tov-offer-card:hover .tov-offer-card__media img {
+    transform: scale(1.04);
+}
+
+.tov-offer-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px 18px 18px;
+}
+
+.tov-offer-card__title {
+    margin: 0 0 6px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--tov-navy);
+    text-transform: none;
+}
+
+.tov-offer-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tov-offer-card__desc {
+    flex: 1;
+    margin: 0 0 14px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--tov-text);
+}
+
+/* Combo */
+.tov-combo {
+    position: relative;
+    padding: 80px 0;
+    background-color: var(--tov-green);
+    background-image: linear-gradient(90deg, rgba(19, 38, 31, 0.95) 0%, rgba(19, 38, 31, 0.75) 45%, rgba(19, 38, 31, 0.55) 100%), url('../images/bguudai.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tov-combo-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.tov-combo-card__media {
+    display: block;
+    overflow: hidden;
+}
+
+.tov-combo-card__media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.tov-combo-card:hover .tov-combo-card__media img {
+    transform: scale(1.04);
+}
+
+.tov-combo-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 14px 16px 16px;
+}
+
+.tov-combo-card__title {
+    margin: 0 0 4px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--tov-navy);
+    text-transform: none;
+}
+
+.tov-combo-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tov-combo-card__title a:hover {
+    color: var(--tov-orange);
+}
+
+.tov-combo-card__desc {
+    flex: 1;
+    margin: 0 0 10px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
+    color: #888;
+}
+
+.tov-combo-card__price {
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--tov-orange);
+}
+
+/* Menu */
+.tov-menu {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.tov-menu__layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) 180px minmax(0, 2fr);
+    gap: 32px 36px;
+    align-items: start;
+}
+
+.tov-menu__signature {
+    margin: 0;
+    font-family: "Great Vibes", cursive;
+    font-size: 34px;
+    line-height: 1.2;
+    color: var(--tov-navy);
+}
+
+.tov-menu__tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tov-menu__tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    color: #444;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tov-menu__tab svg {
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+}
+
+.tov-menu__tab:hover {
+    color: var(--tov-orange);
+}
+
+.tov-menu__tab.is-active {
+    background: #fdf1e7;
+    border-color: #f6d7bf;
+    color: var(--tov-orange);
+}
+
+.tov-menu__panels {
+    min-width: 0;
+}
+
+.tov-menu__panel {
+    display: none;
+}
+
+.tov-menu__panel.is-active {
+    display: block;
+    animation: tovFade 0.35s ease;
+}
+
+@keyframes tovFade {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+}
+
+.tov-menu__panel-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.tov-menu__panel-head h3 {
+    margin: 0;
+    font-family: var(--font-family-Fraunces), "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--tov-navy);
+    text-transform: none;
+}
+
+.tov-menu__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tov-dish-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #efe9df;
+    transition: box-shadow 0.25s ease;
+}
+
+.tov-dish-card:hover {
+    box-shadow: 0 8px 24px rgba(28, 42, 68, 0.08);
+}
+
+.tov-dish-card__media {
+    display: block;
+    overflow: hidden;
+}
+
+.tov-dish-card__media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.tov-dish-card:hover .tov-dish-card__media img {
+    transform: scale(1.04);
+}
+
+.tov-dish-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 12px 14px 14px;
+}
+
+.tov-dish-card__title {
+    margin: 0 0 4px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--tov-navy);
+    text-transform: none;
+}
+
+.tov-dish-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tov-dish-card__title a:hover {
+    color: var(--tov-orange);
+}
+
+.tov-dish-card__desc {
+    flex: 1;
+    margin: 0 0 10px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #888;
+}
+
+.tov-dish-card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.tov-dish-card__price {
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--tov-navy);
+}
+
+.tov-dish-card__more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--tov-navy);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--tov-navy);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tov-dish-card__more:hover {
+    background: var(--tov-orange);
+    border-color: var(--tov-orange);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Video */
+.tov-video {
+    position: relative;
+    padding: 80px 0;
+    background-color: #17110d;
+    background-image: linear-gradient(90deg, rgba(23, 17, 13, 0.95) 0%, rgba(23, 17, 13, 0.82) 100%), url('../images/hanhtrinh.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tov-video__layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 28px 24px;
+    align-items: center;
+}
+
+.tov-video-tile {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #2a221c;
+}
+
+.tov-video-tile img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.tov-video-tile--lg img {
+    aspect-ratio: 16 / 11;
+}
+
+.tov-video-tile .tov-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tov-video-tile:hover img {
+    transform: scale(1.04);
+}
+
+.tov-video-tile:hover .tov-play-icon {
+    background: var(--tov-orange);
+    border-color: var(--tov-orange);
+}
+
+.tov-video-tile__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 28px 16px 12px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.tov-video__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* Reviews */
+.tov-reviews {
+    padding: 80px 0;
+    background: var(--tov-cream);
+}
+
+.tov-reviews__body {
+    position: relative;
+}
+
+.tov-review-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgba(28, 42, 68, 0.06);
+}
+
+.tov-review-card__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.tov-review-card__avatar {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+}
+
+.tov-review-card__name {
+    display: block;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tov-navy);
+}
+
+.tov-review-card__role {
+    display: block;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 11.5px;
+    color: #999;
+}
+
+.tov-review-card__text {
+    flex: 1;
+    margin: 0 0 14px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.65;
+    color: #555;
+}
+
+.tov-review-card__stars {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--tov-orange);
+}
+
+.tov-reviews__navs {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.tov-reviews__nav {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #d8d0c4;
+    background: #fff;
+    color: var(--tov-navy);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tov-reviews__nav:hover {
+    background: var(--tov-orange);
+    border-color: var(--tov-orange);
+    color: #fff;
+}
+
+.tov-reviews__nav.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* Responsive */
+@media (max-width: 1199px) {
+    .tov-menu__layout {
+        grid-template-columns: 180px minmax(0, 1fr);
+    }
+
+    .tov-menu__intro {
+        grid-column: 1 / -1;
+        max-width: 640px;
+    }
+
+    .tov-video__layout {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    }
+
+    .tov-video__intro {
+        grid-column: 1 / -1;
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 991px) {
+    .tov-hero__slider .swiper-slide {
+        min-height: 540px;
+    }
+
+    .tov-hero__container {
+        padding-top: 140px;
+    }
+
+    .tov-split {
+        grid-template-columns: 1fr;
+    }
+
+    .tov-split__intro {
+        max-width: 640px;
+    }
+
+    .tov-menu__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tov-menu__tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tov-menu__tab {
+        white-space: nowrap;
+        width: auto;
+    }
+
+    .tov-menu__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tov-video__layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .tov-offers,
+    .tov-combo,
+    .tov-menu,
+    .tov-video,
+    .tov-reviews {
+        padding: 56px 0;
+    }
+
+    .tov-hero__bg {
+        background-image: var(--tov-bg-mobile, var(--tov-bg-desktop));
+    }
+
+    .tov-hero__overlay {
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0.85) 100%);
+    }
+
+    .tov-hero__controls-wrap {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .tov-menu__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Promotion badge (shared by cards and detail page) */
+.tov-offer-card__media {
+    position: relative;
+}
+
+.promo-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--tov-orange);
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.promo-badge--sm {
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    font-size: 11px;
+}
+
+/* Promotion detail */
+.promo-detail {
+    padding: 64px 0 72px;
+    background: var(--tov-cream);
+}
+
+.promo-detail__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 32px 40px;
+    align-items: start;
+}
+
+.promo-detail__main {
+    min-width: 0;
+    padding: 28px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgba(28, 42, 68, 0.06);
+}
+
+.promo-detail__media {
+    position: relative;
+    margin: 0 0 22px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #efe9df;
+}
+
+.promo-detail__media img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+}
+
+.promo-detail__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 18px;
+    margin-bottom: 14px;
+}
+
+.promo-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.promo-status--active {
+    background: #e7f5ec;
+    color: #1f8a4c;
+}
+
+.promo-status--ended {
+    background: #f1f1f1;
+    color: #888;
+}
+
+.promo-detail__period {
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 13px;
+    color: var(--tov-text);
+}
+
+.promo-detail__period i {
+    margin-right: 4px;
+    color: var(--tov-orange);
+}
+
+.promo-detail__title {
+    margin: 0 0 14px;
+    font-family: var(--font-family-Fraunces), "Playfair Display", Georgia, serif;
+    font-size: clamp(24px, 2.6vw, 32px);
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--tov-navy);
+    text-transform: none;
+}
+
+.promo-detail__lead {
+    margin: 0 0 22px;
+    padding-left: 14px;
+    border-left: 3px solid var(--tov-orange);
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.promo-detail__content {
+    color: #333;
+}
+
+.promo-detail__aside {
+    position: sticky;
+    top: 110px;
+}
+
+.promo-card {
+    padding: 24px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgba(28, 42, 68, 0.08);
+}
+
+.promo-card__title {
+    margin: 0 0 16px;
+    font-family: var(--font-family-Fraunces), "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--tov-navy);
+    text-transform: none;
+}
+
+.promo-card__list {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+.promo-card__list li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e6ded1;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+}
+
+.promo-card__list li:first-child {
+    padding-top: 0;
+}
+
+.promo-card__list span {
+    font-size: 12px;
+    color: #999;
+}
+
+.promo-card__list strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tov-navy);
+}
+
+.promo-card__list strong.is-active {
+    color: #1f8a4c;
+}
+
+.promo-card__list strong.is-ended {
+    color: #888;
+}
+
+.promo-card__btn {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.promo-card__hotline {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 10px;
+    padding-top: 16px;
+    border-top: 1px solid #f0ebe3;
+    font-family: var(--font-family-Urbanist), "Montserrat", sans-serif;
+}
+
+.promo-card__hotline span {
+    font-size: 12px;
+    color: #999;
+}
+
+.promo-card__hotline a {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--tov-orange);
+    text-decoration: none;
+}
+
+.promo-card__hotline a:hover {
+    color: var(--tov-orange-dark);
+    text-decoration: none;
+}
+
+.promo-more {
+    padding: 64px 0 72px;
+    background: #fff;
+}
+
+.promo-more__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.promo-more__head .tov-heading {
+    margin-bottom: 0;
+}
+
+.promo-more__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.promo-more__actions .tov-link {
+    margin-right: 8px;
+}
+
+.promo-more .swiper-slide {
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .promo-detail__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-detail__aside {
+        position: static;
+    }
+}
+
+@media (max-width: 575px) {
+    .promo-detail {
+        padding: 44px 0 52px;
+    }
+
+    .promo-detail__main {
+        padding: 18px;
+    }
+
+    .promo-more__head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -21,7 +21,7 @@ class PromotionController extends Controller
         if($keyword == ""){
             $data = Promotion::orderBy('id','DESC')->get();
         }else{
-            $data = Promotion::where('title', 'LIKE', '%'.$keyword.'%')->orderBy('id','DESC')->get()->toArray();
+            $data = Promotion::where('name', 'LIKE', '%'.$keyword.'%')->orderBy('id','DESC')->get()->toArray();
         }
         return response()->json([
             'data' => $data,

@@ -23,6 +23,7 @@ use App\models\Project;
 use App\models\ProjectCate;
 use App\models\Promotion;
 use App\models\website\Video;
+use App\models\website\TovBanner;
 use App\Notifications\BillNotification;
 use App\User;
 use Mail;
@@ -93,6 +94,11 @@ class PageController extends Controller
         if (!$data['detail']) {
             abort(404);
         }
+        $data['otherPromotions'] = Promotion::where('status', 1)
+            ->where('id', '!=', $data['detail']->id)
+            ->orderBy('id', 'DESC')
+            ->limit(6)
+            ->get();
         return view('khuyenmai.detail',$data);
     }
     public function menu()
@@ -447,5 +453,43 @@ class PageController extends Controller
         return view('foodcombo.detail', [
             'combo' => $combo,
         ]);
+    }
+    public function tasteOfVietnam()
+    {
+        $data['tovBanners'] = TovBanner::where('status', 1)
+            ->orderBy('sort')
+            ->orderBy('id')
+            ->get();
+        $data['foodCombo'] = FoodCombo::where('status', 1)
+            ->orderBy('sort')
+            ->orderBy('id', 'DESC')
+            ->get();
+        $data['promotions'] = Promotion::where('status', 1)
+            ->orderBy('id', 'DESC')
+            ->limit(9)
+            ->get(['id', 'name', 'slug', 'badge', 'image', 'description', 'link']);
+        $data['menuCategories'] = Category::where('status', 1)
+            ->orderBy('sort')
+            ->orderBy('id')
+            ->get(['id', 'name', 'slug'])
+            ->each(function ($cate) {
+                $cate->setRelation('menuProducts', Product::where('status', 1)
+                    ->where('category', $cate->id)
+                    ->orderBy('id', 'DESC')
+                    ->limit(6)
+                    ->get(['id', 'name', 'slug', 'images', 'price', 'discount', 'description', 'cate_slug', 'type_slug']));
+            })
+            ->filter(function ($cate) {
+                return $cate->menuProducts->isNotEmpty();
+            })
+            ->values();
+        $data['tasteVideos'] = Video::where('status', 1)
+            ->orderBy('id', 'DESC')
+            ->limit(5)
+            ->get(['id', 'name', 'image', 'link']);
+        $data['reviews'] = ReviewCus::where('status', 1)
+            ->orderBy('id', 'DESC')
+            ->get();
+        return view('foodcombo.list',$data);
     }
 }

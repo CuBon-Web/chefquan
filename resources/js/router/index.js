@@ -233,6 +233,14 @@ let _routers = [
                 }
             },
             {
+                name: 'tovBanner',
+                path: '/banner-taste-of-vietnam',
+                component: _import('website/tovBanner'),
+                meta: {
+                    requiresAuth: true,
+                }
+            },
+            {
                 name: 'founder',
                 path: '/founder',
                 component: _import('website/founder'),

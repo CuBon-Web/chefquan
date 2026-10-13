@@ -50,6 +50,34 @@
                       <vs-select-item  value="0" text="Ẩn" />
                     </vs-select>
               </div>
+              <div class="form-group">
+                <label>Nhãn nổi bật</label>
+                <vs-input
+                  type="text"
+                  size="default"
+                  placeholder="VD: -15%, Tặng rượu vang"
+                  class="w-100"
+                  v-model="objData.badge"
+                />
+              </div>
+              <div class="form-group">
+                <label>Ngày bắt đầu</label>
+                <vs-input type="date" class="w-100" v-model="objData.start_date" />
+              </div>
+              <div class="form-group">
+                <label>Ngày kết thúc</label>
+                <vs-input type="date" class="w-100" v-model="objData.end_date" />
+              </div>
+              <div class="form-group">
+                <label>Link ngoài (tùy chọn)</label>
+                <vs-input
+                  type="text"
+                  size="default"
+                  placeholder="https://..."
+                  class="w-100"
+                  v-model="objData.link"
+                />
+              </div>
             </div>
           </div>
           
@@ -89,7 +117,10 @@ export default {
         status: 1,
         image: "",
         content:"",
-        link: ""
+        link: "",
+        badge: "",
+        start_date: "",
+        end_date: ""
       }
     };
   },
@@ -105,7 +136,8 @@ export default {
       if(this.objData.name == '') this.errors.push('Tên không được để trống');
       if(this.objData.description == '') this.errors.push('Mô tả không được để trống');
       if(this.objData.content == '') this.errors.push('Nội dung không được để trống');
-      if(this.objData.images == '') this.errors.push('Vui lòng chọn ảnh');
+      if(this.objData.image == '') this.errors.push('Vui lòng chọn ảnh');
+      if(this.objData.start_date && this.objData.end_date && this.objData.end_date < this.objData.start_date) this.errors.push('Ngày kết thúc phải sau ngày bắt đầu');
       if (this.errors.length > 0) {
         this.errors.forEach((value, key) => {
           this.$error(value)

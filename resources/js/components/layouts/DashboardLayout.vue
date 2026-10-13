@@ -118,6 +118,14 @@ export default {
           name: "Taste Of Vietnam",
           route_name: "",
           sub: [
+          {
+              name: "Banner Taste Of Vietnam",
+              path: "/banner-taste-of-vietnam",
+            },
+            {
+              name: "Khuyến mãi",
+              path: "/promotion",
+            },
             {
               name: "Danh sách ",
               path: "/foodcombo",
@@ -191,6 +199,7 @@ export default {
               name: "Quản lý banner chính",
               path: "/banner",
             },
+            
             // {
             //   name: "Quản lý banner phụ",
             //   path: "/bannerads",

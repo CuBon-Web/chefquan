@@ -45,7 +45,7 @@
                                <li class="dropdown current"><a href="{{route('home')}}">Trang chủ</a>
                                </li>
                                <li><a href="{{route('aboutUs')}}">Chef Quân</a></li>
-                               <li class="dropdown has-mega-menu"><a href="javascript:void(0)">Taste Of Vietnam</a>
+                               <li class="dropdown has-mega-menu"><a href="{{route('tasteOfVietnam')}}">Taste Of Vietnam</a>
                                    <ul>
                                    
                                     <li>
@@ -151,7 +151,7 @@
             <ul class="navigation clearfix">
                <li><a href="{{route('home')}}">Trang chủ</a>
                </li>
-               <li class="dropdown"><a href="">Taste Of Vietnam</a>
+               <li class="dropdown"><a href="{{route('tasteOfVietnam')}}">Taste Of Vietnam</a>
                    <ul>
                     @foreach ($foodComboHome as $item)
                     @php

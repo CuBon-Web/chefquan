@@ -24,6 +24,24 @@ export const listBanner  = ({commit},opt) => {
         })
     });
 };
+export const saveTovBanner  = ({commit},opt) => {
+    return new Promise((resolve, reject) => {
+        HTTP.post('/api/website/tov-banner', opt).then(response => {
+            return resolve(response.data);
+        }).catch(error => {
+            return reject(error);
+        })
+    });
+};
+export const listTovBanner  = ({commit},opt) => {
+    return new Promise((resolve, reject) => {
+        HTTP.get('/api/website/list-tov-banner', opt).then(response => {
+            return resolve(response.data);
+        }).catch(error => {
+            return reject(error);
+        })
+    });
+};
 export const savePartner  = ({commit},opt) => {
     return new Promise((resolve, reject) => {
         HTTP.post('/api/website/partner', opt).then(response => {

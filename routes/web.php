@@ -125,7 +125,7 @@ Route::group(['namespace'=>'Client','middleware' => ['checkLanguage']], function
     Route::post('san-pham/compare','ProductController@compare')->name('compareProduct');
     Route::post('san-pham/remove-compare','ProductController@removeCompare')->name('removeCompare');
     Route::get('san-pham/so-sanh-san-pham','ProductController@compareList')->name('compareList');
-    
+    Route::get('taste-of-vietnam','PageController@tasteOfVietnam')->name('tasteOfVietnam');
 });
 
 
